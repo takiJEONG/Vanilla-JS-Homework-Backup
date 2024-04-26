@@ -14,3 +14,5 @@ function resize() {
   }
 }
 window.addEventListener("resize", resize);
+
+//challenge 4월26일 바닐라 JS
