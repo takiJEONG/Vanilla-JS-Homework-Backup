@@ -1,46 +1,22 @@
-const userNumInput = document.querySelector("#userNumInput");
-const rangeNumInput = document.getElementById("rangeNumInput");
+const clockTitle = document.querySelector(".js-clock");
 
-const play = document.querySelector("#play");
-const win = document.querySelector("#win");
-const loose = document.querySelector("#loose");
-const result = document.querySelector("#result");
+const clock = setInterval(function () {
+  const xmas = new Date("December 25 2024 00:00:00 GMT+0900").getTime();
+  const now = new Date().getTime();
+  const distance = xmas - now;
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor(
+    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-const HIDDEN_CLASSNAME = "hidden";
+  clockTitle.innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
-function makeRandNum(event) {
-  event.preventDefault();
-  const rangeNum = parseInt(rangeNumInput.value, 10);
-  const machinNum = Math.ceil(Math.random() * rangeNum);
-  const userNum = parseInt(userNumInput.value, 10);
-  playResult(userNum, machinNum, rangeNum);
-}
-
-function playResult(userNum, machinNum, rangeNum) {
-  console.log(userNum, machinNum);
-  if (isNaN(userNum) === true || isNaN(machinNum) === true) {
-    alert(`Write the number.`);
-    loose.classList.add(HIDDEN_CLASSNAME);
-    win.classList.add(HIDDEN_CLASSNAME);
-    result.classList.add(HIDDEN_CLASSNAME);
-    return;
+  if (distance < 0) {
+    clearInterval(clock);
+    clockTitle.innerText = `IT'S D-DAY!!!`;
   }
-  result.innerText = `You chose: ${userNum}, the machin chose: ${machinNum}`;
-  result.classList.remove(HIDDEN_CLASSNAME);
+}, 1000);
 
-  if (userNum > rangeNum || machinNum < 0) {
-    alert(`You write the wrong number.`);
-    win.classList.add(HIDDEN_CLASSNAME);
-    loose.classList.add(HIDDEN_CLASSNAME);
-  } else if (userNum === machinNum) {
-    win.classList.remove(HIDDEN_CLASSNAME);
-    loose.classList.add(HIDDEN_CLASSNAME);
-  } else {
-    loose.classList.remove(HIDDEN_CLASSNAME);
-    win.classList.add(HIDDEN_CLASSNAME);
-  }
-}
-
-play.addEventListener("click", makeRandNum);
-
-//challenge 4월30일 바닐라 JS
+//challenge 5월1일 바닐라 JS 크리스마스 시계 만들기
