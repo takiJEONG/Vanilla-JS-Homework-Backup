@@ -1,22 +1,31 @@
-const clockTitle = document.querySelector(".js-clock");
+const colors = [
+  "#ef5777",
+  "#575fcf",
+  "#4bcffa",
+  "#34e7e4",
+  "#0be881",
+  "#f53b57",
+  "#3c40c6",
+  "#0fbcf9",
+  "#00d8d6",
+  "#05c46b",
+  "#ffc048",
+  "#ffdd59",
+  "#ff5e57",
+  "#d2dae2",
+  "#485460",
+  "#ffa801",
+  "#ffd32a",
+  "#ff3f34",
+];
 
-const clock = setInterval(function () {
-  const xmas = new Date("December 25 2024 00:00:00 GMT+0900").getTime();
-  const now = new Date().getTime();
-  const distance = xmas - now;
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor(
-    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-  );
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+const btn = document.querySelector("button");
 
-  clockTitle.innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+function randomGradient() {
+  const nowColor1 = colors[Math.floor(Math.random() * colors.length)];
+  const nowColor2 = colors[Math.floor(Math.random() * colors.length)];
+  document.body.style.background = `linear-gradient(to right, ${nowColor1},${nowColor2})`;
+}
+btn.addEventListener("click", randomGradient);
 
-  if (distance < 0) {
-    clearInterval(clock);
-    clockTitle.innerText = `IT'S D-DAY!!!`;
-  }
-}, 1000);
-
-//challenge 5월1일 바닐라 JS 크리스마스 시계 만들기
+//challenge 5월2일 바닐라 JS 크리스마스 시계 만들기
