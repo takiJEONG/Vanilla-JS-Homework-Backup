@@ -1,0 +1,299 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url(../../img/10.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  position: relative;
+  height:100vh;
+}
+
+.grid-container {
+  position: absolute;
+  width: 90vw;
+  height: 80vh;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: repeat(5, 1fr);
+  row-gap: 10px;
+  column-gap: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center; 
+  color: white;
+}
+.clock{
+  padding: 10px;
+  grid-area: clock; 
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  background: rgba(106, 106, 106, .55);
+  font-weight: bold;
+}
+
+.todo-task {
+  padding: 10px;
+  display: grid;
+  grid-area: todotask;
+  grid-column: 1 / 2;
+  grid-row: 2 / 4;
+  grid-template-rows: 1fr 1fr 8fr;
+  background: rgba(106, 106, 106, .55);
+}
+
+.todo-finish {
+  padding: 10px;
+  display: grid;
+  grid-area: todofinish;
+  grid-column: 1 / 2;
+  grid-row: 4 / 6;
+  grid-template-rows: 1fr 9fr;
+  background: rgba(106, 106, 106, .55);
+}
+
+.name-calendar {
+  padding: 10px;
+  grid-area: namecalendar;
+  grid-column: 2 / 3;
+  grid-row: 1 / 6;
+  background: rgba(106, 106, 106, .55);
+  position: relative;
+}
+
+.weather {
+  padding: 10px;
+  grid-area: weather;
+  grid-column: 3 / 4;
+  grid-row: 1 / 6;
+  background: rgba(106, 106, 106, .55);
+}
+
+.js-time, .js-day {
+  margin: 10px;
+}
+
+.js-time {
+  font-size: 2.5em;
+}
+
+.js-name, .js-weather {
+  font-size: 1.5em;
+}
+
+form {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.name-calendar > .js-name-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input[type="text"] {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2.5px solid;
+  outline: none;
+  width: 100%;
+  border-bottom-color:white;
+}
+
+input[type="text"]::placeholder {
+  color: white;
+}
+
+.js-todo-ul, .js-finish-ul {
+  overflow-y: auto;
+}
+
+.js-weather-today {
+  padding: 10px;
+}
+
+.js-weather-weekly {
+  display: grid;
+  grid-template-rows: repeat(7, 1fr);
+}
+
+.js-weather-weekly #dailyContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+#js-title-month{
+  font-size: 1.5em;
+  margin: 10px;
+}
+
+#js-days {
+  width: 100%;
+  display: flex; 
+  flex-wrap: wrap; 
+  border-left: solid;
+  background: white;
+  color: black;
+}
+
+#js-title-days{
+  display: flex; 
+  flex-wrap: wrap; 
+  width: 100%;
+  border-top: solid;
+}
+
+#js-dates {
+  display: flex; 
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.date, .day {
+  text-align: center; 
+  width: calc(100%/7); 
+  height: 50px;
+  padding: 13px 0; 
+  box-sizing: border-box;
+  border-bottom: solid;
+  border-right: solid;
+}
+
+.today {
+  background-color: cadetblue;
+  opacity: 0.8;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+ 
+::-webkit-scrollbar-track {
+  background: #eeeeee;
+  border-radius: 5px;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#c2e59c, #64b3f4);
+  border-radius: 5px;
+}
+
+@media screen and (max-width:768px) {
+  .clock{
+    grid-area: clock; 
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    background: rgba(106, 106, 106, .55);
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .todo-task {
+    grid-area: todotask;
+    grid-column: 1 / 2;
+    grid-row:  2/ 4;
+    background: rgba(106, 106, 106, .55);
+  }
+  
+  .todo-finish {
+    grid-area: todofinish;
+    grid-column: 1 / 2;
+    grid-row:  4/ 6;
+    background: rgba(106, 106, 106, .55);
+  }
+  
+  .name-calendar {
+    grid-area: namecalendar;
+    grid-column: 2 / 3;
+    grid-row:  1/ 6;
+    background: rgba(106, 106, 106, .55);
+  }
+  
+  .weather {
+    grid-area: weather;
+    grid-column: 3 / 4;
+    grid-row:  1/ 6;
+    background: rgba(106, 106, 106, .55);
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    text-align: center; 
+  }
+}
+
+@media screen and (max-width:480px) {
+  main {
+    position: relative;
+    height:100vh;
+    overflow-y: auto;
+  }
+
+  .clock{
+    grid-area: clock; 
+    background: rgba(106, 106, 106, .55);
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .todo-task {
+    grid-area: todotask;
+    background: rgba(106, 106, 106, .55);
+  }
+  
+  .todo-finish {
+    grid-area: todofinish;
+    background: rgba(106, 106, 106, .55);
+  }
+  
+  .name-calendar {
+    grid-area: namecalendar;
+    background: rgba(106, 106, 106, .55);
+  }
+  
+  .weather {
+    grid-area: weather;
+    background: rgba(106, 106, 106, .55);
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "clock"
+    "todotask"
+    "todofinish"
+    "namecalendar"
+    "weather";
+    text-align: center; 
+  }
+}

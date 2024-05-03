@@ -1,15 +1,68 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link src="" href="style.css" />
-    <title>Time Until Christmas</title>
+
+<head>
+    <title>moment</title>
     <meta charset="UTF-8" />
-  </head>
-  <body>
-    <h1>Time Until Christmas</h1>
-    <h2 class="js-clock"></h2>
-    <script src="index.js"></script>
-  </body>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="src/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+</head>
+
+<body>
+    <main>
+        <div class="grid-container">
+            <section class="clock">
+                <strong class="js-time">00:00</strong>
+                <h4 class="js-day"></h4>
+            </section>
+            <section class="todo-task">
+                <strong>Today' TODO</strong>
+                <form class="js-todo-form">
+                    <input type="text" placeholder="what is yuour plane?">
+                </form>
+                <ul class="js-todo-ul"></ul>
+            </section>
+            <section class="todo-finish">
+                <strong>Finish TODO</strong>
+                <ul class="js-finish-ul"></ul>
+            </section>
+            <section class="name-calendar">
+                <h2 class="js-name"></h2>
+                <form class="js-name-form">
+                    <input type="text" placeholder="Enter the yuour name">
+                </form>
+                <section id="js-calendar">
+                    <div id="js-title-month"></div>
+                    <div id="js-days">
+                        <div id="js-title-days">
+                            <div class="day">일</div>
+                            <div class="day">월</div>
+                            <div class="day">화</div>
+                            <div class="day">수</div>
+                            <div class="day">목</div>
+                            <div class="day">금</div>
+                            <div class="day">토</div>
+                        </div>
+                        <div id="js-dates"></div>
+                    </div>
+                </section>
+            </section>
+            <section class="weather">
+                <h1 class="js-weather">오늘의 날씨</h1>
+                <section class="js-weather-today"></section>
+                <section class="js-weather-weekly"></section>
+            </section>
+
+        </div>
+    </main>
+    <script src="weather.js"></script>
+    <script src="clock.js"></script>
+    <script src="name.js"></script>
+    <script src="todo.js"></script>
+    <script src="calendar.js"></script>
+</body>
+
 </html>
 
-<!-- 5월2일 바닐라 JS챌린지 그라디언트 페이지 만들기 -->
+<!-- 5월3일 바닐라 JS챌린지 최종 페이지 만들기 -->
