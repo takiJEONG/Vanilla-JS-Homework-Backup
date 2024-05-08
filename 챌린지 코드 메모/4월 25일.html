@@ -238,7 +238,7 @@ title.addEventListener()를 작성한다.
 하지만 JS에 무슨 event를 listen하고 싶은지 알려줘야 한다.
 왜냐하면 모든 event에 대해 알고싶은 것이 아니고 단 하나의 event만 알아보고싶기 때문이다.
 
-￼
+
 이 코드의 의미는 title element를 찾을 방법을 배웠고 찾아왔다.
 그리고 eventListener를 생성했다. 여기서 click event를 llisten하고, 이 click event가 발생하면,
 우리는 handleTitleClick이라는 function이 동작하길 원한다.
@@ -248,9 +248,8 @@ title.addEventListener()를 작성한다.
 원하는 것은, 이 function을 JS에 넘겨주고, 유저가 title을 클릭할 경우에 JS가 실행버튼을 대신 눌러주길 바라는 것이다.
 즉, 내가 직접 실행버튼을 누르지 않고, JS에 이 function 이름을 넘겨줘서, 유저가 클릭할 경우에 유저가 title을 클릭할 경우에 JS가 실행버튼을 대신 눌러주는 것이다.
 ()괄호를 추가함으로써 실행버튼을 누를 수 있다는거 기억하나??
-￼
-title이 클릭될때마다 기록하는 것을 볼 수 있다.(listen)
 
+title이 클릭될때마다 기록하는 것을 볼 수 있다.(listen)
 이제 항상 이런 방식으로 사용할 것이다.
 title이란 HTML element가 하나 있다고 가정하고
 addEventListener를 호출하고, listen하고 싶은 event이름을 알려줄 것이다.
@@ -274,6 +273,7 @@ Click event를 listen하기 위해서는 HTML element를 가져와서 addEventLi
 그리고 유저가 이 element에 해당 event를 했을때 어떤 함수를 실행 할지도 정해야한다.
 그리고 여기서 이 function의 실행버튼을 눌러선 안되고.
 
+++
 #3.4 Events part II
 
 listen하고 싶은 event를 찾는 가장 좋은 방법은 구글의 찾고싶은 element의 이름
@@ -281,12 +281,14 @@ listen하고 싶은 event를 찾는 가장 좋은 방법은 구글의 찾고싶�
 당연히 이곳에서 HTML에 대한 설명을 해줄 것이다.
 링크에 Web ApIs라는 문장이 포함된 페이지를 찾을 것이다.
 이건 JS관점에서의 HTML Heading Element란 의미이기 때문이다.
+
 만약 이걸 들여다보고싶지 않다면
 console.dir을 통해 element를 console에 출력시켜준다.
 그럼 엄청 많은 property를 출력해 줄거다.
 사용 가능한 event는 여기서 찾을 수 있다.
 Property 이름 앞에 on이 붙어있다면, 그게 바로 event listener이다.
 event를 사용할 때는 예를들어 onabort가 있으면 abort로 사용해줘야 한다.
+
 click도 마찬가지. onclick에서 click만.
 이 말은 click event를 부여할 수도 있고, change event를 부여할 수도 있다.
 
@@ -298,10 +300,10 @@ Function 이름은 굳이 handtiteclick  이런식으로 짓지 않아도 된다
 그리고 이 function을 여기 addEventListener에게 전달해 줄 것이다.
 테스트 해보면 JS가 두 event를 listen하고 있는 것을 볼 수 있다.
 
+++
 #3.5 More Events
 
 event들은 그저 클릭,엔터, 리브 정도만 처리하는게 아니기 때문에 더 알 필요가 있다.
-
 해볼라고 하는건 window의 interface 또는 object이다.
 window는 브라우저 창을 의미한다.
 우리가 할건 event 내부를 살펴보고, event를 listening하는 또다른 방법을 배워볼 것이다.
@@ -317,7 +319,6 @@ Device motion - 모바일이 움직이거나 할 때 발생하는 event
 window는 document가 JS에서 기본적으로 제공되듯이 window도 기본적을 제공한다.
 Resize-
 
-￼
 여기서 body가 중요하다. 
 h1처럼 document 밑으로 가져올 순 없다.
 만약 document.title을 호출하면, 가져와야할 title이 아닌 이 위에 있는 코드의 function 속에 있는 title을 가져올 것이다.
@@ -329,7 +330,6 @@ h1처럼 document 밑으로 가져올 순 없다.
 이 handleWindowResize function은 body의 backgroundColor를 변경할 것이다.
 전에 말했듯이 콘솔에서 body에 매우 쉽게 접근할 수 있다.
 Body는 특별하기 때문에 콘솔에서 body를 호출할 수 있다.
-￼
 불러와보면 backgroundcolor가 tomato로 돼있는걸 볼 수 있다. 
 콘솔에서 가져올 수 있는건 이게 다이다.
 예를 들어 document.div 이런식으로는 가져오로 수 없다. 심지어 이건 존재하지도 않는거.
@@ -339,18 +339,12 @@ Document의 body, head, title 이런것들은 중요하기 때문에 이렇게 �
 Wifi event에 대해 알아보자
 이건 animation을 위한 것이다.
 잠시 copy를 살펴보자. -해당 event는 유저가 copy 행위를 했을 때 발생한다.
-￼
-￼
-이런식으로.
 우린 copy event를 listen해서 이 event를 처리하는 것이다.
 이건 h1에서 발생한 event가 아니고 window에서 발생한 event지만, 패턴은 똑같다.
 
 element를 찾아서 event listener를 추가하고 event가 발생하면 반응을 해주는 것이다.
 
 이번엔 우리가 wifi에 연결 돼있는지 브라우저가 알 수 있게하는 event에 대해 알아보자.
-￼
-￼
-
 이렇게 되면 마우스 올리기 전 grab me
 마우스 올리면 mose here!
 떼면 gone!
