@@ -368,6 +368,7 @@ h1처럼 document 밑으로 가져올 순 없다.
 만약 document.title을 호출하면, 가져와야할 title이 아닌 이 위에 있는 코드의 function 속에 있는 title을 가져올 것이다.
 그러므로 title을 h1으로 다 바꿔주자. h1은 title이랑 다르니까.
 코드를 맞게 작성 했다면 이제 event를 하나 더 listen하고 있고, resize event이다.
+
 하지만 h1을 resize할 수는 없고, window를 resize 할 수는 있다.
 이제 window element의 resize event를 listen하고 있고,
 만약 이  event가 발생한다면 handleWindowResize가 실행될 거고,
@@ -393,9 +394,6 @@ Wifi event에 대해 알아보자
 element를 찾아서 event listener를 추가하고 event가 발생하면 반응을 해주는 것이다.
 
 이번엔 우리가 wifi에 연결 돼있는지 브라우저가 알 수 있게하는 event에 대해 알아보자.
-
-
-
 이렇게 되면 마우스 올리기 전 grab me
 마우스 올리면 mose here!
 떼면 gone!
