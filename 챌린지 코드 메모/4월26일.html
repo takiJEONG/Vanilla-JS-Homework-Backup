@@ -44,10 +44,10 @@ NewColor는 아무것도 없는 비어있는 let 변수이다.
 만약 currentColor가 blue라면, newColor는 tomato로 변경해 줄거다.
 그리고 else라면 newColor는 blue가 되어야겠지.
 
-￼
+
 newColor를 변경해봤자, 우리의 h1의 color엔 아무 영향도 미치지 않는다.
 
-￼
+
 최종 코드다.
 이러면 읽을때 훨씬 보기 좋다. 우리가 뭘 할라고 하는지, 우리가 왜 color를 변경하려고 하는지 이해할 수 있다.
 우리가 배운 것의 모든것들, const라던가 let이라던가 if,else, 일치하는지 비교 등등…
@@ -62,6 +62,7 @@ Step 2. event를 listen 해라
 Step 3. 그 event에 반응해라
 반응이란건 뭔가 보여주거나 감추거나 색깔을 바꾼다는 것등과 같다.
 
+++
 #3.7 CSS JavaScript Part II
 
 우린 application의 스타일링을 더 잘할 수 있다고 했다.
@@ -75,18 +76,13 @@ JS와 HTML,CSS 간의 춤사위가 뭔지에 대해 배워본다. (Application b
 Index.html 파일은 CSS 문서와 JS문서를 import하고 있다.
 
 css파일에서 html에 있는 h1을 가져다가 뭘 할거냐면 h1의 색의 기본값을 파란색으로 지정해줄 것이다.
-￼
-￼
 css에 의해 h1이 색이 변한것을 확인할 수 있다.
 추가로 active란 class를 생성해 줄 것이다. 
-￼
 이제 이 class를 어떤 element에 지정해주면 어떤 element던지, h1이던, span이던간에 tomato 색을 가지게 된다.
 
 이를 이용해 JS에서 하고 싶은건, h1에 active class를 전달해주는 것이다.
-￼
 JS에서 이렇게 간단하게 지정해줄 수 있다.
 물론 css에서 작성했던 스펠 그대로 정확히 적어주어야 한다.
-
 이로인해 JS가 CSS에게 직접 대화하지 않게 되었다.
 JS에선 HTML을 변경할거고, CSS는 HTML을 바라보게 되었다.
 
@@ -109,10 +105,10 @@ JS에선 HTML을 변경할거고, CSS는 HTML을 바라보게 되었다.
 만약 h1의 class name이 active라면 이걸 제거하고 싶은거니까 h1.className을 비워줄거다.
 하지만 만약 h1의 className이 active가 아니라면 이건 else다.
 =부호가 3개라면, className이 active와 같은지 확인하는 것이고
-￼
+
 1개라면 해당 값을 “” 값으로 변경해주는 것이다.
-￼
-￼
+
+
 class이름이 생겼다 없어졌다 하는 모습을 볼 수 있음
 
 이제 css를 사용하고 있기 때문에 이렇게도 할 수 있다
