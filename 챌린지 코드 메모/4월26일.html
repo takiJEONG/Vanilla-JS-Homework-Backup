@@ -1,5 +1,6 @@
 4월 26일 챌린지
 
+++
 #3.6 CSS in JaveScript
 
 사용했었던 event listener들을 모두 지우고 시작할거다. 
@@ -11,38 +12,33 @@
 Blue, tomato,blue,tomato 이런식으로..
 그 말은 무언가가 true인지 확인해야한다는 뜻이다.
 
-￼
 function에서 첫번째 color를 획득할 수 있다.
 두번째, h1의 색상을 설정할 수 있다.
 세번째, h1	의 색상을 다시 가지고 온다.
-￼
 다시,
 검사했을때 만약 h1.style.color가 blue라면 이걸 tomato로 변경해주세요라고 하는것이다.
 그리고 만약 h1.style.color가 blue 색깔이 아니라면, blue로 변경해주세요라고 하는거다.
 이건 굉장히 간단하다. If활용.
 
-￼
+
 ===은 값이 일치함을 확인하기 위한 것이다. h1의 color값이 blue와 일치하는지 확인한다.
 if에서 하는 일은 이 h1dml color를 tomato로 바꿔주는 것이다.
 
 if다음은 필수적인건 아니지만, else를 사용해줘야 한다.
 if문이 true라면 이걸 tomato 색으로 바꿀 것이다.
 false라면 blue로 바꿀 것이다.
-실행시켜보면 
-￼
-￼
-누를때마다 바뀌는걸 볼 수 있음.
+실행시켜보면 누를때마다 바뀌는걸 볼 수 있음.
 
-￼
+
 하지만 우리는 코드를 개선해서 더 깔끔하게 만들 수 있다.
 
 h1.style.color.를 이렇게 많이 호출하기 보다는 먼저 이 color 현재 상태 저장하는걸 배워보자.
 
-￼
+
 이게 첫번째.
-￼
+
 그리고 h1 두줄도 바꾸자.
-￼
+
 NewColor는 아무것도 없는 비어있는 let 변수이다.
 기억할지 모르겠지만 const는 한번 설정하면 고정, let은 업데이트가 가능하다고 했었다.
 만약 currentColor가 blue라면, newColor는 tomato로 변경해 줄거다.
