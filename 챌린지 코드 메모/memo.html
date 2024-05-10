@@ -302,6 +302,7 @@ title이 클릭될때마다 기록하는 것을 볼 수 있다.(listen)
 title이란 HTML element가 하나 있다고 가정하고
 addEventListener를 호출하고, listen하고 싶은 event이름을 알려줄 것이다.
 event를 찾는 방법은 나중에 알게 될 것이다.
+
 그리고 이곳엔 event가 발생하면 호출할 function을 전달해주면 된다.
 handleTitleClick에 괄호를 넣지 않는다는거 잘 체크해라. 중요.
 우리는 실행시키길 원하지 않았다.
@@ -318,6 +319,7 @@ title.style.color = “blue”;라고 하고 동작시켜보면 클릭했을때 
 Click event를 listen하기 위해서는 HTML element를 가져와서 addEventListener function을 실행시켜주면 되는데,
 이곳에 어떤 event를 listen하고 싶은지 명시해줘야 한다.
 모든 event를 listen하고 싶진 않으니까.
+
 그리고 유저가 이 element에 해당 event를 했을때 어떤 함수를 실행 할지도 정해야한다.
 그리고 여기서 이 function의 실행버튼을 눌러선 안되고. 
 이 다음부턴 다음 챕터에서.
@@ -330,12 +332,14 @@ listen하고 싶은 event를 찾는 가장 좋은 방법은 구글의 찾고싶�
 당연히 이곳에서 HTML에 대한 설명을 해줄 것이다.
 링크에 Web ApIs라는 문장이 포함된 페이지를 찾을 것이다.
 이건 JS관점에서의 HTML Heading Element란 의미이기 때문이다.
+
 만약 이걸 들여다보고싶지 않다면
 console.dir을 통해 element를 console에 출력시켜준다.
 그럼 엄청 많은 property를 출력해 줄거다.
 사용 가능한 event는 여기서 찾을 수 있다.
 Property 이름 앞에 on이 붙어있다면, 그게 바로 event listener이다.
 event를 사용할 때는 예를들어 onabort가 있으면 abort로 사용해줘야 한다.
+
 click도 마찬가지. onclick에서 click만.
 이 말은 click event를 부여할 수도 있고, change event를 부여할 수도 있다.
 
