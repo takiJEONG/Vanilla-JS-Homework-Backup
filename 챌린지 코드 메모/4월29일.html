@@ -158,7 +158,6 @@ Submit event가 발생했다는걸 파악하고 싶다. 이제 로그인 버튼�
 
 우리가 지금 필요한건 login-form 그 자체다.
 
-
 이제 클릭이 아닌 submit을 감지해야한다.
 다행히도 우린 submit event가 있다.
 
@@ -178,10 +177,12 @@ form을 submit할 때 입력값을 받아내는거고 그건 해낸 상태.
 Submit event가 발생하면 브라우저가 알아서 저 function을 실행시켜줄 것이다. 매우 중요하니 꼭 기억할 것.
 () 이것들을 더하면 브라우저가 보자마자 자동으로 이 function을 실행시켜버릴 것이다.
 addEventListener를 활용할 때는 바로 실행시키려고 하는게 아니다.
-활용할 때는 function의 이름만 적어주고, 그럼 지정한 이벤트가 발생했을때만 해당 function을 실행시킬 것이다. 그러니까 내가 할 필요 없다.
+활용할 때는 function의 이름만 적어주고, 그럼 지정한 이벤트가 발생했을때만 해당 function을 실행시킬 것이다. 
+그러니까 내가 할 필요 없다.
 
 브라우저가 정확히는 onLoginSubmit()을 하고 있는게 아니다.
-브라우저는 우선 OnLoginSubmit function을 호출하고, 브라우저가 function을 실행시키고 있기는 하지만 ()이 안에서 나한테 정보를 주고 있다. (Info)
+브라우저는 우선 OnLoginSubmit function을 호출하고, 브라우저가 function을 실행시키고 있기는 하지만 
+()이 안에서 나한테 정보를 주고 있다. (Info)
 브라우저는 브라우저 내에서 event로부터 정보를 잡아내서 onLoginSubmit function 실행버튼을 누르고 있다.
 나한테 중요할지도 모르는 정보를 가지고 있는 채로 말이다.
 argument를 추가해보자. 이름은 뭐가 되든 좋다.
