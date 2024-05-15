@@ -356,14 +356,14 @@ HTML을 살펴보면 단순히 classname을 추가해주고 삭제하고 할 뿐
 className을 추가하고 삭제하는거처럼 말이다. 그러니 아마 API가 존재할 것이다.
 우리가 브라우저에 공짜로 뭔가를 기억할 수 있게 해주는 기능이 존재한다. 그 API의 이름은 local storage이다.
 콘솔에 localStorage라고 입력하면 볼 수 있는데 이미 정의되어 있다.
+
 아직 우리가 모르는 storage라는 걸 반환하고 있는데 중요한건 local storage가 존재한다는 것이다.
 Local storage는 우리가 브라우저에 뭔가를 저장할 수 있게 해준다. 그래서 나중에 가져다 쓸 수도 있다.
 Local storagedp 뭐가 들어있는지 보고 싶다면 개발자 도구를 이용하면 된다.
 
-￼
+
 여기 있는 것들 모두 다양한 방법으로 유저 정보를 저장할 수 있지만 그 중 local storage가 가장 다루기 쉽다.
 
-￼
 지금은 비어있는걸 확일할 수 있다. 하지만 나중에 이것저것 저장하기 시작하면 여기가 바뀌는걸 보게될 것이다.
 Local storage API를 살펴보면 다양하고 멋진 method들을 보게될 것이다.
 그 중 하나는 바로 setItem이다. 이걸 활용하면 local storage에 정보를 저장할 수 있다.
@@ -395,7 +395,7 @@ JS에서 localStorage.setItem을 적어준다. 우선 저장될 값의 이름(ke
 만약 local storage에 유저정보가 없다면 form이 먼저 표시되도록 할거다.
 
 
-#4.6 Loading Username
+++ #4.6 Loading Username
 
 Local storage에 유저정보가 있으면 form을 보여주면 안된다.
 우리는 H1 요소를 보여줘야 한다. 
@@ -409,6 +409,7 @@ username을 삭제하고 실행시켜보면 null 값을 결과로 받는 모습�
 근데 username이 반복되고 있다. 저 값은 똑같아야하는데 오타가 날 수도 있다. 오타내놓고 눈치 못채고 있을 수도 있다.
 이거처럼 string을 반복해서 사용하는 경우에 그리고 무조건 같은 경우여야할 때 전처럼 변수로 고정시켜줄 수 있다.
 이건 매우 중요하다 왜냐면 이 string을 한번만 작성하는 것이 최고이기 때문이다.
+
 만약 string을 작성하다가 오타가 나면 JS는 이걸 지적하지 않는다. 하지만 변수명이 오타가 나면, JS가 지적해준다.
 본인이 생성한 string을 반복해서 사용하게 도ㅚㄹ 경우에는 앞서 만든 class name “hidden”이나 local storage key “username”처럼
 이렇게 반복되는 string들은 대문자 변수로 저장해놓는 것이 좋은게 실수로 만들고 싶지 않은 string이라는 사실을 기억하고 상기시키기 좋다.
@@ -431,16 +432,19 @@ HTML에는 있지만 화면에는 표시되지 않고 있는 상태이다.
 로그인을 클릭하면 이전이랑 똑같이 작동하는것을 볼 수 있다. 차이점은 이제 local storage에 유저정보가 저장되어 있다는 거다.
 그럼 이제 새로고침하면 다시 작동해야되는데 아직 우리는 아무것도 하지 않고 있다.
 이제 우리가 해야할 일은 greeting을 보여주는거다.
-Greeting을 보여주기 위해서는 hidden class명을 제거해줘야 한다. greeting.classList.remove(HIDDEN_CLASSNAME);
-새로고침하면 작동은 하고 있는걸 볼 수 있다. greeting에 이제 hidden class명은 없다. 하지만 greeting에 텍스트도 없다.
+
+Greeting을 보여주기 위해서는 hidden class명을 제거해줘야 한다. 
+greeting.classList.remove(HIDDEN_CLASSNAME);
+새로고침하면 작동은 하고 있는걸 볼 수 있다. 
+greeting에 이제 hidden class명은 없다. 하지만 greeting에 텍스트도 없다.
 왜냐하면 그 텍스트는 우리가 추가해줘야하기 때문이다. greeting.innerText = `Hello ${savedUsername}`;
 지금 존재하는건 savedUsername이니까 저렇게 작성해줘야 한다. 적고 둘이 순서도 바꿔주자
 그리고 먼저 greeting 안에 텍스트를 추가하고 그런 다음 greeting에서 HIDDEN_CLASSNAME을 제거해줄거다.
-￼
+
 작동됐다!
 이제 우린 유저정보를 기억하고 있다.
 다시 확인해보자. Local storage에서 유저정보를 지우고 새로고침하면, 
-￼
+
 form이 표시됐다. 완벽하다!
 하지만 아주 작은 문제점이 있다.
 똑같은 동작을 2번 반복하고 있다는 것이다.
@@ -448,10 +452,10 @@ form이 표시됐다. 완벽하다!
 그래서 어쩌면 이걸 함수로 만드는게 나을 수도 있다고 생각한다.
 
 그럼 paintGreetings라는 함수를 만들어보자.
-￼
+
 이 작업을 수행할텐데, username은 argument에서 가져올거고 
 원래 else에 있던 애들은 paintGreetings함수를 호출해주면 된다. 인자로 savedUsername 넣어주고.
-￼
+
 이렇게 해서 코드를 2줄 더 적게 적어줄 수 있다.
 
 우리는 방금 username을 인자로 받는 함수를 만들었고 이건 우리가 해오던 일을 할거다.
