@@ -49,10 +49,10 @@ function을 만들고, 그 이벤트의 기본 동작을 막는다.
 Const 저 시점에 우리가 하는건 Input의 value를 새로운 변수에 복사하는 것이기 때문이다.
 그 이후에 input의 value를 가지고 무얼하든 newToDo에는 아무런 영향이 없다.
 
-#.7.1 Adding ToDos
+++ #.7.1 Adding ToDos
 
 pintToDo() 얘는 toDo를 그리는 역할을 담당할거다
-￼
+
 근데 얘는 아직 지금 그려야할 것이 뭔지 모른다. 인자를 newToDo로 주자. 이건 당연히 text가 될거다.
 이제 handleToDoSubmit function이 paintToDo를 사용하게 되는거다.
 
@@ -64,15 +64,15 @@ pintToDo() 얘는 toDo를 그리는 역할을 담당할거다
 pintToDo가 하는 일은 기본적으로 이런걸 만드는 것이다.
 이제 li를 먼저 만들거다. 변수이름을 꼭 li라고 안해도 된다. HTML태그 이름으로 만들 필요가 없다는 뜻이다.
 createElement안에는 li여야만 한다.
-￼
+
 이제 할라는건 이런식으로 li를 만들기보단
 span을 이용해서 li를 만들어하고 싶은거다. 그 이유는 나중에 여기에 toDo를 삭제하는 button을 만들 것이기 때문이다.
-￼
+
 2개의 element를 만들었는데 아직 span이 li내부에 있지 않다.
-￼
+
 이제 li는 span이라는 자식을 가지게 됐다.
 이제 span.innerText에 newToDo를 넣자.
-￼
+
 이렇게 해주면 span의 텍스트는 handleToDoSubmit에서 온 newTodo 텍스트가 되는 것이다.
 
 이제 list에 li를 놓도록 해보자.
