@@ -78,14 +78,14 @@ quote에 innerText를 넣어주는데 todaysQuote가 quote랑 author를 가지�
 이번엔 background.js라는 파일을 JS 폴더안에 만들어줫다.
 
 사실 quotes.js랑 비슷한 부분이 정말 많다. 사실 거의 같다.
-￼
+
 Array 생성. img폴더에 있는 이미지들이랑 이 images Array안의 이름이 같게만 해주면 된다.
 폴더 안에 있는 이미지 이름들을 JS파일에서도 똑같이 쓴다는 것만 명심하자
 
 먼저 랜덤 이미지를 가져와보자.
 Math.floor(Math.random() * quotes.length)
 이거 그대로 복붙
-￼
+
 이렇게.
 
 우리가 진짜로 해야하는건 이 이미지를 html에 실제로 추가하는 것이다.
@@ -101,7 +101,7 @@ JS를 이용해서 뭔가를 가져왔었다. quotes.js의 경우에는 span을 
 정리하자면 JS에서 이미지를 만들고 이걸 html에 추가해야한다.
 보통 우리는 document.뒤에 querySelector()나 getElementById()를 사용했지 createElement()는 써본 적이 없다.
 이걸 사용할거다. img라는 element를 생성해보자
-￼
+
 console.log하면 이렇게 나온다.
 지금 이걸 elements탭에서 보려고하면 어디에도 없다. 페이지에서 찾을 수가 없는거다.
 소스도 써주자. src는 img/라고 써주자.
