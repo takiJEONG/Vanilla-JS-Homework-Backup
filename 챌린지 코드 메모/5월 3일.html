@@ -9,29 +9,26 @@ Todo.js 파일을 만들고 바로 시작해보자. Import 해주고.
 왜냐면 사용자가 todo를 입력해야만 하고, list도 필요하다. 사용자가 todo를 나열할 수 있어야 하기 때문이다.
 todo목록에서 todo들을 확인할 수 있어야 한다.
 그럼 만들어보자.
-￼
+
 Required로 필수항목으로까지 만들어주자.
 Form 
-￼
 새로고침해서 실행해보면 실행되는 JS는 없고 페이지가 새로고침되고 있다. greeting배울때 배웠던 부분. 그현상이다.
 
-￼
 Todo-list라는 ul하나 생성하고 이 리스트엔 아무것도 추가하지 않을거다.
 JS로 li를 추가할거기 때문에 HTML에는 아무것도 쓰지 않을 것이다.
 
 이제 form과 ul을 HTML에서 JS로 가져가보자.
 toDoForm을 가져오는데 getElementByID를 사용하자.
-￼
+
 우리는 greetings의 form에서 했던것과 똑같은걸 반복할거다.
 복습해보면, form은 submit 이벤트를 가진다.
 function을 만들고, 그 이벤트의 기본 동작을 막는다.
 알고 있겠지만, submit의 기본 동작은 페이지를 새로고침 하는 것이고, 우리는 그걸 원하는게 아니기 때문이다.
 
 그럼 handleToDoSubmit이라는 function을 만들자.
-￼
+
 이제 우리는 JS가 방금 발생한 event를 handleToDoSubmit함수의 첫번째 인자로 준다는 것을 알고 있다.
 
-￼
 이렇게 해주고나면 엔터를 쳐도 새로고침되지 않는것을 볼 수 있다. 잘 동작하는중..
 
 다음으로 우리는 여기있는 input의 value를 얻어내고싶다.
@@ -43,10 +40,10 @@ function을 만들고, 그 이벤트의 기본 동작을 막는다.
 
 이번엔 엔터를 누를때마다 입력한 것을 비워지게 하는 작업을 해보자
 방법은 toDoInput의 value에 빈값 “”을 넣는 것이다.
-￼
+
 잘 작동한다.
 근데 input value를 비우기 전에 그 값을 저장해보자
-￼
+
 이렇게.
 명심할건 toDoInput.value를 비웠다고해서 newToDo가 비워지는 것을 의미하는건 아니라는 것이다.
 Const 저 시점에 우리가 하는건 Input의 value를 새로운 변수에 복사하는 것이기 때문이다.
